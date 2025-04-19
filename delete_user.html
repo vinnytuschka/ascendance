@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block title %}Delete Account{% endblock %}
+
+{% block content %}
+<body>
+    <div class="container">
+        <h2 class="mt-5">Delete Your Account</h2>
+        <p>We're sorry to see you go. Deleting your account will permanently remove all your data. Please confirm if you'd like to proceed.</p>
+
+        <!-- Warning message about account deletion -->
+        <div class="alert alert-warning mt-4">
+            <strong>Warning!</strong> Once your account is deleted, this action cannot be undone. All your data will be lost.
+        </div>
+
+        <!-- Form to delete account -->
+        <form action="{{ url_for('delete_user', id=user.id) }}" method="POST" class="mt-4">
+            <button type="submit" class="btn btn-danger">Delete Account</button>
+        </form>
+
+        <!-- Link to go back to settings or another page -->
+        <p class="mt-3">
+            <a href="{{ url_for('settings') }}">Return to Settings</a>
+        </p>
+    </div>
+</body>
+{% endblock %}

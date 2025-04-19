@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block title %}Payment{% endblock %}
+
+{% block content %}
+  <div class="container mt-5">
+    <h2 class="text-center">Payment Details</h2>
+
+    <form method="POST" action="{{ url_for('payment') }}">
+      <div class="mb-3">
+        <label for="amount" class="form-label">Amount</label>
+        <input type="text" name="amount" class="form-control" id="amount" placeholder="Amount to be paid" required>
+      </div>
+
+      <button type="submit" class="btn btn-primary w-100">Proceed to Payment</button>
+    </form>
+  </div>
+{% endblock %}

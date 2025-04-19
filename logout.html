@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+<title>{% block title %}Logout{% endblock %}</title>
+
+{% block content %}
+    <div class="container mt-4">
+        <h2>Are you sure you want to log out?</h2>
+
+        <form action="{{ url_for('logout') }}" method="post">
+            <!-- Logout button styled with Bootstrap -->
+            <button type="submit" class="btn btn-danger btn-lg mt-3">Logout</button>
+        </form>
+    </div>
+{% endblock %}

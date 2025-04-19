@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+<title>{% block title %}Settings{% endblock %}</title>
+
+{% block content %}
+  <div class="container mt-4">
+    <h2>User Settings</h2>
+
+    <div class="mt-4">
+      <h3>Do you want to change your password?</h3>
+      <!-- Reset password button styled as a Bootstrap button -->
+      <a href="{{ url_for('change_password', id=user_id) }}" class="btn btn-primary btn-lg">Change Password</a>
+    </div>
+
+    <div class="mt-4">
+      <h3>Do you want to delete your account?</h3>
+      <!-- Delete account button styled as a Bootstrap button -->
+      <a href="{{ url_for('delete_user', id=user_id) }}" class="btn btn-danger btn-lg">Delete Account</a>
+    </div>
+  </div>
+{% endblock %}
